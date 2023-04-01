@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href='https://fonts.googleapis.com/css?family=Spartan' rel='stylesheet'>
 	<title>Get Me an NFT</title>
 	<style>
+        body{
+            background-color: black;
+        }
 		/* Styling for the header menu */
 		.header {
 			position: sticky;
@@ -31,8 +35,7 @@
 			margin-right: 20px;
 			font-family: 'Spartan', sans-serif;
 			font-size: 18px;
-			color: #333333;
-			text-transform: uppercase;
+			color: #f5f5f5;
 			cursor: pointer;
 		}
 		
@@ -45,7 +48,7 @@
 			border: 2px solid #ffffff;
 			border-radius: 20px;
 			font-family: 'Spartan', sans-serif;
-			font-size: 18px;
+			font-size: 14px;
 			color: #ffffff;
 			background-color: transparent;
 			cursor: pointer;
@@ -58,8 +61,7 @@
 		
 		/* Styling for the hero section */
 		.hero {
-			height: 500px;
-			background-image: linear-gradient(to bottom, #129AD4 100%, #166283 52%);
+			height: 100vh;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -76,14 +78,18 @@
 			margin-bottom: 50px;
 		}
 		
-		.hero-subtitle {
+		.hero-bottomtitle {
 			font-family: 'Spartan', sans-serif;
 			font-size: 27px;
-			font-weight: 400;
-			color: #ffffff;
+			font-weight: 300;
+			color: linear-gradient(to bottom, #129AD4 100%, #166283 52%);
 			text-align: left;
-			line-height: 1.5;
+			line-height: 1;
 			margin-bottom: 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 30px;
 		}
 	</style>
 </head>
@@ -100,7 +106,7 @@
 	</header>
 	<section class="hero">
 		<h1 class="hero-title">Transform your online presence</h1>
-		<p class="hero-subtitle">
+		<p class="hero-bottomtitle">
 			New<br>
 			Futuristic<br>
 			Trendy
