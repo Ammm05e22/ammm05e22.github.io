@@ -66,6 +66,8 @@
 			justify-content: center;
 			align-items: center;
 			padding: 0 20%;
+            position: absolute;
+            top: 0;
 		}
 		
 		.hero-title {
@@ -73,6 +75,7 @@
 			font-size: 80px;
 			font-weight: 400;
 			text-align: center;
+            text-transform: uppercase;
 			color: #ffffff;
 			margin-bottom: 50px;
 		}
@@ -86,6 +89,7 @@
 			line-height: 1;
 			margin-bottom: 0;
             position: absolute;
+            text-transform: uppercase;
             bottom: 0;
             left: 0;
             padding: 30px;
@@ -96,14 +100,16 @@
 </head>
 <body>
 	<header class="header">
-		<div class="header-logo"></div>
-		<div class="header-menu">
+        <div class="header-menu">
 			<div class="header-menu-item">Home</div>
 			<div class="header-menu-item">About</div>
 			<div class="header-menu-item">Contact</div>
 			<div class="header-menu-item">NFT?</div>
 		</div>
-		<button class="header-button">Request website</button>
+        <div>
+            <div class="header-logo"></div>
+		    <button class="header-button">Request website</button>
+        </div>
 	</header>
 	<section class="hero">
 		<h1 class="hero-title">Transform your online presence</h1>
