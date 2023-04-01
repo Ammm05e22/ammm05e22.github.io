@@ -12,11 +12,17 @@
 			position: sticky;
 			top: 0;
 			display: flex;
-			justify-content: space-between;
+			justify-content: center;
 			align-items: center;
 			padding: 10px 20px;
 			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 		}
+        .header-sides{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100vw;
+        }
 		
 		.header-logo {
 			width: 50px;
@@ -28,6 +34,7 @@
 		.header-menu {
 			display: flex;
 			align-items: center;
+            position: absolute;
 		}
 		
 		.header-menu-item {
@@ -106,7 +113,7 @@
 			<div class="header-menu-item">Contact</div>
 			<div class="header-menu-item">NFT?</div>
 		</div>
-        <div>
+        <div class="header-sides">
             <div class="header-logo"></div>
 		    <button class="header-button">Request website</button>
         </div>
