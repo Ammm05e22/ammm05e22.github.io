@@ -1,11 +1,110 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            R.E.J.
-        </title>
-    </head>
-    <body style="background-image: 'background';">
-        <h1>This is my Github website</h1>
-    </body>
+<head>
+	<title>My Website</title>
+	<style>
+		/* Styling for the header menu */
+		.header {
+			position: sticky;
+			top: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px 20px;
+			background-color: #ffffff;
+			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+		}
+		
+		.header-logo {
+			width: 50px;
+			height: 50px;
+			background-color: #129AD4;
+			border-radius: 50%;
+		}
+		
+		.header-menu {
+			display: flex;
+			align-items: center;
+		}
+		
+		.header-menu-item {
+			margin-right: 20px;
+			font-family: 'Spartan', sans-serif;
+			font-size: 18px;
+			color: #333333;
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+		
+		.header-menu-item:hover {
+			color: #129AD4;
+		}
+		
+		.header-button {
+			padding: 10px 20px;
+			border: 2px solid #ffffff;
+			border-radius: 20px;
+			font-family: 'Spartan', sans-serif;
+			font-size: 18px;
+			color: #ffffff;
+			background-color: transparent;
+			cursor: pointer;
+		}
+		
+		.header-button:hover {
+			background-color: #ffffff;
+			color: #129AD4;
+		}
+		
+		/* Styling for the hero section */
+		.hero {
+			height: 500px;
+			background-image: linear-gradient(to bottom, #129AD4 100%, #166283 52%);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 0 20%;
+		}
+		
+		.hero-title {
+			font-family: 'Spartan', sans-serif;
+			font-size: 80px;
+			font-weight: 400;
+			text-align: center;
+			color: #ffffff;
+			margin-bottom: 50px;
+		}
+		
+		.hero-subtitle {
+			font-family: 'Spartan', sans-serif;
+			font-size: 27px;
+			font-weight: 400;
+			color: #ffffff;
+			text-align: left;
+			line-height: 1.5;
+			margin-bottom: 0;
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<div class="header-logo"></div>
+		<div class="header-menu">
+			<div class="header-menu-item">Home</div>
+			<div class="header-menu-item">About</div>
+			<div class="header-menu-item">Contact</div>
+			<div class="header-menu-item">NFT?</div>
+		</div>
+		<button class="header-button">Request website</button>
+	</header>
+	<section class="hero">
+		<h1 class="hero-title">Transform your online presence</h1>
+		<p class="hero-subtitle">
+			New<br>
+			Futuristic<br>
+			Trendy
+		</p>
+	</section>
+</body>
 </html>
