@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "SupabaseStarter",
-    platforms: [.iOS(.v17)],
+    platforms: [.iOS(.v26)],
     dependencies: [
         .package(url: "https://github.com/supabase/supabase-swift.git", from: "2.0.0")
     ],

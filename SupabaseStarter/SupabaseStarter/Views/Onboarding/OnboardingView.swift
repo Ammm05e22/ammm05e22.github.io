@@ -6,92 +6,123 @@ struct OnboardingView: View {
     @State private var viewModel = OnboardingViewModel()
 
     var body: some View {
-        VStack(spacing: 32) {
-            // Header
-            VStack(spacing: 8) {
-                Text("Complete Your Profile")
-                    .font(.title)
-                    .fontWeight(.bold)
+        ZStack {
+            MeshGradient(
+                width: 3, height: 3,
+                points: [
+                    [0, 0], [0.5, 0], [1, 0],
+                    [0, 0.5], [0.5, 0.5], [1, 0.5],
+                    [0, 1], [0.5, 1], [1, 1]
+                ],
+                colors: [
+                    .teal.opacity(0.7), .cyan.opacity(0.5), .blue.opacity(0.6),
+                    .cyan.opacity(0.4), .teal.opacity(0.5), .indigo.opacity(0.4),
+                    .blue.opacity(0.5), .teal.opacity(0.3), .cyan.opacity(0.5)
+                ]
+            )
+            .ignoresSafeArea()
 
-                Text("Choose a username and avatar")
-                    .foregroundStyle(.secondary)
-            }
-            .padding(.top, 40)
+            VStack(spacing: 32) {
+                // Header
+                VStack(spacing: 12) {
+                    Text("Complete Your Profile")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.white)
 
-            // Avatar Picker
-            PhotosPicker(selection: $viewModel.selectedPhoto, matching: .images) {
-                if let avatarImage = viewModel.avatarImage {
-                    avatarImage
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 120, height: 120)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(.blue, lineWidth: 3))
-                } else {
-                    ZStack {
-                        Circle()
-                            .fill(.blue.opacity(0.1))
-                            .frame(width: 120, height: 120)
+                    Text("Choose a username and avatar")
+                        .foregroundStyle(.white.opacity(0.8))
+                }
+                .padding(.top, 60)
 
-                        VStack(spacing: 4) {
-                            Image(systemName: "camera.fill")
-                                .font(.title2)
-                            Text("Add Photo")
-                                .font(.caption)
+                // Glass card
+                VStack(spacing: 28) {
+                    // Avatar Picker
+                    PhotosPicker(selection: $viewModel.selectedPhoto, matching: .images) {
+                        if let avatarImage = viewModel.avatarImage {
+                            avatarImage
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 120, height: 120)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(.white.opacity(0.5), lineWidth: 3))
+                                .shadow(color: .black.opacity(0.2), radius: 12)
+                        } else {
+                            ZStack {
+                                Circle()
+                                    .frame(width: 120, height: 120)
+                                    .foregroundStyle(.clear)
+                                    .glassEffect(.regular, in: .circle)
+
+                                VStack(spacing: 6) {
+                                    Image(systemName: "camera.fill")
+                                        .font(.title2)
+                                    Text("Add Photo")
+                                        .font(.caption)
+                                }
+                                .foregroundStyle(.primary)
+                            }
                         }
-                        .foregroundStyle(.blue)
+                    }
+                    .onChange(of: viewModel.selectedPhoto) {
+                        Task { await viewModel.loadImage() }
+                    }
+
+                    // Username field
+                    HStack(spacing: 12) {
+                        Image(systemName: "at")
+                            .foregroundStyle(.secondary)
+                            .frame(width: 20)
+                        TextField("Username", text: $viewModel.username)
+                            .autocorrectionDisabled()
+                            .textInputAutocapitalization(.never)
+                    }
+                    .padding()
+                    .glassEffect(.regular, in: .rect(cornerRadius: 14))
+
+                    // Error
+                    if let error = viewModel.errorMessage {
+                        Label(error, systemImage: "exclamationmark.triangle.fill")
+                            .font(.caption)
+                            .foregroundStyle(.red)
                     }
                 }
-            }
-            .onChange(of: viewModel.selectedPhoto) {
-                Task { await viewModel.loadImage() }
-            }
+                .padding(28)
+                .glassEffect(.regular.interactive, in: .rect(cornerRadius: 28))
+                .padding(.horizontal, 20)
 
-            // Username
-            TextField("Username", text: $viewModel.username)
-                .textFieldStyle(.roundedBorder)
-                .autocorrectionDisabled()
-                .textInputAutocapitalization(.never)
+                Spacer()
+
+                // Complete Button
+                Button {
+                    Task {
+                        guard let userId = try? await supabase.auth.session.user.id else { return }
+                        let success = await viewModel.saveProfile(userId: userId)
+                        if success {
+                            authViewModel.completeOnboarding()
+                        }
+                    }
+                } label: {
+                    HStack(spacing: 8) {
+                        if viewModel.isLoading {
+                            ProgressView()
+                                .tint(.white)
+                        } else {
+                            Text("Complete Setup")
+                                .fontWeight(.semibold)
+                            Image(systemName: "arrow.right")
+                        }
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 16)
+                }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
+                .tint(.blue)
+                .disabled(viewModel.username.isEmpty || viewModel.isLoading)
                 .padding(.horizontal, 24)
-
-            // Error
-            if let error = viewModel.errorMessage {
-                Text(error)
-                    .font(.caption)
-                    .foregroundStyle(.red)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 24)
+                .padding(.bottom, 40)
             }
-
-            Spacer()
-
-            // Complete Button
-            Button {
-                Task {
-                    guard let userId = try? await supabase.auth.session.user.id else { return }
-                    let success = await viewModel.saveProfile(userId: userId)
-                    if success {
-                        authViewModel.completeOnboarding()
-                    }
-                }
-            } label: {
-                Group {
-                    if viewModel.isLoading {
-                        ProgressView()
-                            .tint(.white)
-                    } else {
-                        Text("Complete Setup")
-                    }
-                }
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(viewModel.username.isEmpty ? .gray : .blue)
-                .foregroundStyle(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-            }
-            .disabled(viewModel.username.isEmpty || viewModel.isLoading)
-            .padding(.horizontal, 24)
-            .padding(.bottom, 32)
         }
     }
 }

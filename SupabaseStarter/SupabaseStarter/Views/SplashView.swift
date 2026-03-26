@@ -1,21 +1,44 @@
 import SwiftUI
 
 struct SplashView: View {
+    @State private var isAnimating = false
+
     var body: some View {
-        VStack(spacing: 20) {
-            Image(systemName: "bolt.shield.fill")
-                .font(.system(size: 80))
-                .foregroundStyle(.blue)
+        ZStack {
+            MeshGradient(
+                width: 3, height: 3,
+                points: [
+                    [0, 0], [0.5, 0], [1, 0],
+                    [0, 0.5], [0.5, 0.5], [1, 0.5],
+                    [0, 1], [0.5, 1], [1, 1]
+                ],
+                colors: [
+                    .blue, .indigo, .purple,
+                    .cyan, .blue, .indigo,
+                    .teal, .cyan, .blue
+                ]
+            )
+            .ignoresSafeArea()
 
-            Text("Supabase Starter")
-                .font(.title)
-                .fontWeight(.bold)
+            VStack(spacing: 24) {
+                Image(systemName: "bolt.shield.fill")
+                    .font(.system(size: 80))
+                    .foregroundStyle(.white)
+                    .symbolEffect(.pulse, options: .repeating)
 
-            ProgressView()
-                .progressViewStyle(.circular)
+                Text("Supabase Starter")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.white)
+
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .tint(.white)
+                    .scaleEffect(1.2)
+            }
+            .padding(48)
+            .glassEffect(.regular.interactive, in: .rect(cornerRadius: 32))
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(.systemBackground))
     }
 }
 

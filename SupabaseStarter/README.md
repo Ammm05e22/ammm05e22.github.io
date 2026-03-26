@@ -1,9 +1,10 @@
 # Supabase Starter — iOS SwiftUI
 
-A production-ready iOS starter template with **SwiftUI**, **Supabase Auth**, and **MVVM architecture**.
+A production-ready iOS starter template with **SwiftUI**, **Supabase Auth**, **MVVM architecture**, and Apple's **Liquid Glass** design language (iOS 26).
 
 ## Features
 
+- **Liquid Glass UI**: Built with Apple's latest design language — `MeshGradient` backgrounds, `.glassEffect()` translucent containers, `symbolEffect` animations, and depth-driven visual hierarchy
 - **Authentication**: Email/password, Apple Sign-In, Google Sign-In via Supabase Auth
 - **Session Persistence**: Automatic session restoration on app launch (Supabase Keychain storage)
 - **Profile Management**: Username + avatar stored in Supabase (Postgres + Storage)
@@ -13,8 +14,8 @@ A production-ready iOS starter template with **SwiftUI**, **Supabase Auth**, and
 
 ## Requirements
 
-- Xcode 15+
-- iOS 17+
+- Xcode 26+
+- iOS 26+
 - A [Supabase](https://supabase.com) project
 
 ## Setup
