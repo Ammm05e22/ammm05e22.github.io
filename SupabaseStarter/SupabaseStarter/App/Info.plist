@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>com.yourcompany.SupabaseStarter</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <!-- URL scheme for Supabase OAuth callback -->
+                <!-- Format: your-scheme (must match Supabase dashboard redirect URL) -->
+                <string>supabasestarter</string>
+            </array>
+        </dict>
+    </array>
+</dict>
+</plist>
