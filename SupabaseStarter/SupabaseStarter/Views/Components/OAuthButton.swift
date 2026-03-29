@@ -34,18 +34,15 @@ struct OAuthButton: View {
             .frame(maxWidth: .infinity)
             .padding(.vertical, 14)
         }
-        .buttonStyle(.plain)
-        .glassEffect(.regular.interactive, in: .capsule)
+        .buttonStyle(.bordered)
+        .buttonBorderShape(.roundedRectangle(radius: 14))
     }
 }
 
 #Preview {
-    ZStack {
-        Color.blue.opacity(0.3).ignoresSafeArea()
-        VStack(spacing: 12) {
-            OAuthButton(provider: .apple) {}
-            OAuthButton(provider: .google) {}
-        }
-        .padding()
+    VStack(spacing: 12) {
+        OAuthButton(provider: .apple) {}
+        OAuthButton(provider: .google) {}
     }
+    .padding()
 }

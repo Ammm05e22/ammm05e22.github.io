@@ -5,74 +5,52 @@ struct HomeView: View {
     @Environment(Router.self) private var router
 
     var body: some View {
-        ZStack {
-            MeshGradient(
-                width: 3, height: 3,
-                points: [
-                    [0, 0], [0.5, 0], [1, 0],
-                    [0, 0.5], [0.5, 0.5], [1, 0.5],
-                    [0, 1], [0.5, 1], [1, 1]
-                ],
-                colors: [
-                    .blue.opacity(0.4), .indigo.opacity(0.3), .purple.opacity(0.3),
-                    .cyan.opacity(0.2), .blue.opacity(0.2), .indigo.opacity(0.2),
-                    .teal.opacity(0.3), .cyan.opacity(0.2), .blue.opacity(0.3)
-                ]
-            )
-            .ignoresSafeArea()
+        VStack(spacing: 32) {
+            Spacer()
 
-            VStack(spacing: 32) {
-                Spacer()
+            VStack(spacing: 20) {
+                Image(systemName: "checkmark.seal.fill")
+                    .font(.system(size: 64))
+                    .foregroundStyle(.green)
+                    .symbolEffect(.breathe)
 
-                // Welcome card
-                VStack(spacing: 20) {
-                    Image(systemName: "checkmark.seal.fill")
-                        .font(.system(size: 64))
-                        .foregroundStyle(.green)
-                        .symbolEffect(.breathe)
+                Text("Welcome!")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
 
-                    Text("Welcome!")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-
-                    Text("You're signed in successfully.")
-                        .foregroundStyle(.secondary)
-                }
-                .padding(36)
-                .glassEffect(.regular, in: .rect(cornerRadius: 32))
-                .padding(.horizontal, 20)
-
-                Spacer()
-
-                // Action buttons
-                VStack(spacing: 14) {
-                    Button {
-                        router.navigate(to: .profile)
-                    } label: {
-                        Label("View Profile", systemImage: "person.circle.fill")
-                            .fontWeight(.semibold)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 16)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .buttonBorderShape(.roundedRectangle(radius: 16))
-                    .tint(.blue)
-
-                    Button(role: .destructive) {
-                        Task { await authViewModel.signOut() }
-                    } label: {
-                        Label("Sign Out", systemImage: "rectangle.portrait.and.arrow.right")
-                            .fontWeight(.medium)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
-                    }
-                    .buttonStyle(.plain)
-                    .glassEffect(.regular.interactive, in: .rect(cornerRadius: 16))
-                }
-                .padding(.horizontal, 24)
-                .padding(.bottom, 40)
+                Text("You're signed in successfully.")
+                    .foregroundStyle(.secondary)
             }
+
+            Spacer()
+
+            VStack(spacing: 12) {
+                Button {
+                    router.navigate(to: .profile)
+                } label: {
+                    Label("View Profile", systemImage: "person.circle.fill")
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.roundedRectangle(radius: 14))
+
+                Button(role: .destructive) {
+                    Task { await authViewModel.signOut() }
+                } label: {
+                    Label("Sign Out", systemImage: "rectangle.portrait.and.arrow.right")
+                        .fontWeight(.medium)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                }
+                .buttonStyle(.bordered)
+                .buttonBorderShape(.roundedRectangle(radius: 14))
+            }
+            .padding(.horizontal, 24)
+            .padding(.bottom, 32)
         }
+        .background(Color(.systemGroupedBackground))
     }
 }
 
