@@ -1,3 +1,29 @@
+// AI server contract:
+//
+// POST /analyze-entry
+//   Request body:  { entry_id, person:{id,display_name,relationship_type,current_scores},
+//                    raw_text, occurred_at, recent_entries:[{occurred_at,raw_text}],
+//                    boundaries:[string] }
+//   Response body: { model, analysis: {
+//                       headline,                      // short one-liner for the news feed (optional)
+//                       facts:[], emotions:[], assumptions:[],
+//                       red_flags:[], green_flags:[],
+//                       recommendation,
+//                       patterns_detected:[],
+//                       deltas: { emotionalSafety, consistency, reciprocity,
+//                                 growthAlignment, integrity, attraction }, // each in [-10, 10]
+//                       delta_rationale
+//                   } }
+//
+// POST /weekly-summary
+//   Request body:  { person_id, iso_week, person, entries:[{occurred_at,raw_text,analysis}],
+//                    score_history:[{created_at,composite,axes}] }
+//   Response body: { model, summary: { headline, themes:[], evidence_entry_ids:[],
+//                                       suggested_status, next_check_in } }
+//
+// Auth: every request carries Authorization: Bearer <supabase access_token>.
+// The server verifies the JWT against the Supabase project JWKS, then calls
+// OpenAI with response_format=json_object. Server holds the OpenAI key.
 import { supabase } from '../supabaseClient.js';
 import { AI_SERVER_BASE_URL } from '../config.js';
 

@@ -149,3 +149,7 @@ drop trigger if exists user_settings_updated_at on public.user_settings;
 create trigger user_settings_updated_at
     before update on public.user_settings
     for each row execute function public.handle_updated_at();
+
+-- 11. user-marked portfolio stance (Hold | Buy | Sell)
+alter table public.people add column if not exists user_stance text;
+alter table public.people add column if not exists user_stance_updated_at timestamptz;
