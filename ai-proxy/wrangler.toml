@@ -1,0 +1,13 @@
+name = "rcd-ai-proxy"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Public (non-secret) vars. Override before `wrangler deploy`.
+[vars]
+SUPABASE_PROJECT_REF = "YOUR_PROJECT_REF"
+OPENAI_MODEL = "gpt-4o-mini"
+ALLOWED_ORIGINS = "https://ammm05e22.github.io,http://localhost:8000"
+
+# Secrets are NOT set here — use `wrangler secret put <NAME>`:
+#   wrangler secret put OPENAI_API_KEY
+#   wrangler secret put SUPABASE_JWT_SECRET   (only if your project uses HS256)
