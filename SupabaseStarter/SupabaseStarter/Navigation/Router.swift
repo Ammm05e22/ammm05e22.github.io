@@ -6,6 +6,8 @@ enum Route: Hashable {
     case onboarding
     case home
     case profile
+    case personDetail(id: UUID)
+    case logEntry(personId: UUID?)
 }
 
 @Observable

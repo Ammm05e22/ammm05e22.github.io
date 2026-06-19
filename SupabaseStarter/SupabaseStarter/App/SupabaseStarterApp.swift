@@ -29,17 +29,7 @@ struct SupabaseStarterApp: App {
                     OnboardingView()
 
                 case .authenticated:
-                    NavigationStack(path: $router.path) {
-                        HomeView()
-                            .navigationDestination(for: Route.self) { route in
-                                switch route {
-                                case .profile:
-                                    ProfileView()
-                                default:
-                                    EmptyView()
-                                }
-                            }
-                    }
+                    RootTabView()
                 }
             }
             .environment(authViewModel)
