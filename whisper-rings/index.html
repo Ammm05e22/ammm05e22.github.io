@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whisper Rings — Lingerie that whispers</title>
+  <meta name="description" content="Whisper Rings — beautiful lingerie with fast US shipping, delivered in about a week. Join the list for early access." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Whisper Rings — Lingerie that whispers" />
+  <meta property="og:description" content="Beautiful lingerie, fast US shipping, delivered in about a week." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blush: #E8C4C0;
+      --wine: #7C3048;
+      --espresso: #2B1B1E;
+      --cream: #FBF6F2;
+      --champagne: #D4AF7A;
+      --charcoal: #33272A;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 50% 0%, #fff 0%, var(--cream) 55%, #f3e7e1 100%);
+      color: var(--charcoal);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 22px;
+      overflow-x: hidden;
+    }
+
+    /* Ring motif echoing the logo */
+    .ring {
+      width: 64px; height: 64px;
+      border: 2px solid var(--champagne);
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: 28px;
+      box-shadow: 0 0 28px rgba(212,175,122,0.45);
+    }
+    .ring::after {
+      content: "";
+      position: absolute; top: -9px; left: 50%;
+      width: 12px; height: 12px;
+      transform: translateX(-50%) rotate(45deg);
+      background: linear-gradient(135deg, #fff, #d9c3e0);
+      box-shadow: 0 0 12px rgba(255,255,255,0.9);
+    }
+
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: clamp(46px, 9vw, 86px);
+      letter-spacing: 1px;
+      color: var(--wine);
+      line-height: 1;
+    }
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(18px, 3.4vw, 26px);
+      color: var(--espresso);
+      margin-top: 10px;
+      opacity: 0.85;
+    }
+
+    .coming {
+      margin-top: 30px;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--wine);
+      font-weight: 500;
+    }
+    .lede {
+      max-width: 440px;
+      margin: 16px auto 0;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--charcoal);
+    }
+
+    /* Email capture */
+    form {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      max-width: 440px;
+    }
+    input[type="email"] {
+      flex: 1 1 230px;
+      padding: 14px 18px;
+      border: 1px solid #e3cfc9;
+      border-radius: 30px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      background: #fff;
+      color: var(--charcoal);
+      outline: none;
+    }
+    input[type="email"]:focus { border-color: var(--wine); }
+    button {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      background: var(--wine);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    button:hover { background: #5e2236; }
+    button:active { transform: scale(0.98); }
+    .note { margin-top: 12px; font-size: 12px; color: #a98; }
+
+    /* Trust pillars */
+    .pillars {
+      margin-top: 46px;
+      display: flex;
+      gap: 26px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 620px;
+    }
+    .pillar {
+      font-size: 13px;
+      color: var(--espresso);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.9;
+    }
+    .pillar span { font-size: 17px; }
+
+    footer {
+      margin-top: 54px;
+      font-size: 12px;
+      color: #b6a;
+      opacity: 0.7;
+      letter-spacing: 0.5px;
+    }
+    footer a { color: var(--wine); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="ring" aria-hidden="true"></div>
+
+  <h1 class="brand">Whisper Rings</h1>
+  <p class="tagline">Lingerie that whispers.</p>
+
+  <p class="coming">Opening Soon</p>
+  <p class="lede">
+    Beautiful, confidence-first lingerie — with fast US shipping, delivered in
+    about a week. Join the list for early access and a launch-day offer.
+  </p>
+
+  <!--
+    Email capture: replace the action below with your real endpoint.
+    Easiest options for a static page:
+      • Shopify: use a Shopify-hosted "coming soon" page instead, OR
+      • A free form service (Formspree, Mailchimp embedded, Beehiiv, ConvertKit).
+    Example Formspree: action="https://formspree.io/f/yourFormId" method="POST"
+  -->
+  <form action="#" method="POST" onsubmit="return notifyDemo(event)">
+    <input type="email" name="email" placeholder="Your email address" required aria-label="Email address" />
+    <button type="submit">Notify Me</button>
+  </form>
+  <p class="note" id="formNote">No spam — just the launch and the occasional lovely thing.</p>
+
+  <div class="pillars">
+    <div class="pillar"><span>🚚</span> Fast US shipping · ~1 week</div>
+    <div class="pillar"><span>🔒</span> Discreet packaging</div>
+    <div class="pillar"><span>📏</span> True-fit size guide</div>
+  </div>
+
+  <footer>
+    &copy; <span id="yr"></span> Whisper Rings ·
+    <a href="mailto:hello@whisper-rings.com">hello@whisper-rings.com</a>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    // Placeholder handler until a real form endpoint is connected.
+    function notifyDemo(e) {
+      e.preventDefault();
+      document.getElementById('formNote').textContent =
+        "Thank you — you're on the list! (Connect a real form endpoint to store this.)";
+      e.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
