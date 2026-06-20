@@ -15,6 +15,7 @@ copy, and a coming-soon landing page.
 - **`docs/AD_GUIDANCE.md`** — how to advertise intimates without account bans.
 - **`docs/LAUNCH_DAY_PLAN.md`** — pre-launch → launch day → first 72h, with copy templates.
 - **`docs/30_DAY_GROWTH_PLAN.md`** — week-by-week plan to find a winner and scale profitably.
+- **`docs/EMAIL_FLOWS.md`** — paste-ready automated emails (welcome, cart, post-purchase, win-back).
 - **`docs/policies/`** — paste-ready policy pages:
   - `returns-policy.md` (no-returns + defective-item exception)
   - `shipping-policy.md` (1-week US shipping)
