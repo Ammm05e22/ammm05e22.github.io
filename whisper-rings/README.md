@@ -11,7 +11,9 @@ copy, and a coming-soon landing page.
 - **`docs/BRAND_KIT.md`** — colors, fonts, voice, taglines, trust pillars.
 - **`docs/SIZE_CHART.md`** — Asian→US size conversions (your top return-preventer).
 - **`docs/PRODUCT_COPY_TEMPLATES.md`** — title + description formulas in brand voice.
+- **`docs/PRODUCT_LISTINGS.md`** — first 10 paste-ready listings + pricing model.
 - **`docs/AD_GUIDANCE.md`** — how to advertise intimates without account bans.
+- **`docs/LAUNCH_DAY_PLAN.md`** — pre-launch → launch day → first 72h, with copy templates.
 - **`docs/policies/`** — paste-ready policy pages:
   - `returns-policy.md` (no-returns + defective-item exception)
   - `shipping-policy.md` (1-week US shipping)
