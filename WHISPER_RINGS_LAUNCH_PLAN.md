@@ -5,18 +5,25 @@ from an AliExpress supplier (Ellolace). This builds on the generic
 `ECOMMERCE_LAUNCH_CHECKLIST.md` but focuses on what's specific to **dropshipping**
 and **intimate apparel** — the two things that make or break this niche.
 
-> ⚠️ The three things that kill lingerie dropshippers: **bad sizing → returns**,
-> **ad accounts banned for "adult" content**, and **customers angry about 2–4 week
-> shipping**. Most of this plan exists to defuse those three.
+**Confirmed parameters for this store:**
+- **Market:** United States only.
+- **Shipping:** ~1 week (you have fast shippers) — this is a real competitive
+  advantage; feature it prominently ("Ships from the US / 1-week delivery").
+- **Returns:** No returns (hygiene policy for intimate apparel) — see Phase 6 for
+  how to state this so it converts and survives card disputes.
+
+> ⚠️ With fast shipping and no returns settled, your remaining two big risks are:
+> **bad sizing** (your top complaint + chargeback source) and **ad accounts banned
+> for "adult" content**. Most of this plan now exists to defuse those two.
 
 ---
 
 ## Phase 0 — Validate the Supplier (do this FIRST)
 
 - [ ] **Order 3–5 sample pieces from Ellolace yourself** before listing anything. Photograph them, check real quality, fit, and fabric.
-- [ ] **Confirm AliExpress sizing is Asian sizing** — it almost always runs 1–2 sizes small vs US/EU. This is your #1 future complaint source.
-- [ ] **Check the supplier's stats** — store rating (aim 95%+), years active, review count, "ships from" location.
-- [ ] **Confirm shipping options & realistic delivery times** to your target countries (AliExpress Standard / Cainiao — expect 2–4 weeks, sometimes more).
+- [ ] **Confirm AliExpress sizing is Asian sizing** — it almost always runs 1–2 sizes small vs US. This is your #1 future complaint source, especially with a no-returns policy.
+- [ ] **Lock in the fast (≤1 week to US) shipping line with your supplier contact** — confirm it in writing, confirm it covers your hero SKUs, and confirm a backup if a line slows down. Your whole brand promise rests on this.
+- [ ] **Check the supplier's stats** — store rating (aim 95%+), years active, review count, "ships from" location (a US warehouse is ideal for your 1-week promise).
 - [ ] **Check stock depth** — dropship items vanish; pick suppliers with consistent inventory and have backup SKUs ready.
 - [ ] **Confirm "Ellolace" isn't a protected trademark** you'd be infringing — sell the products, not someone else's brand name. Your brand is Whisper Rings.
 - [ ] **Ask the supplier (via your friend's contact)** about: blind/white-label shipping (no AliExpress invoices in the parcel), bulk pricing, and faster shipping lines.
@@ -56,7 +63,7 @@ and **intimate apparel** — the two things that make or break this niche.
 - [ ] **Replace/clean up images** — remove watermarks and any competitor branding; use consistent, tasteful photos. Your own sample photos build huge trust here.
 - [ ] **Build a clear, accurate SIZE CHART** with **cm/inch measurements**, not just S/M/L. Add a "this brand runs small — size up" note. This single step prevents most returns.
 - [ ] **Set prices** at your 2.5–3.5× markup.
-- [ ] **Set realistic processing + shipping times** on each product page ("Ships in 2–4 weeks").
+- [ ] **Add the fast-shipping line** to each product page ("Fast US shipping — ~1 week").
 - [ ] **Map each product to the supplier SKU** in DSers so orders auto-fulfill.
 
 ## Phase 5 — Payments
@@ -68,9 +75,14 @@ and **intimate apparel** — the two things that make or break this niche.
 
 ## Phase 6 — Shipping, Returns & Trust (intimates are special)
 
-- [ ] **Set transparent shipping expectations everywhere** — banner, product page, cart, confirmation email: "Ships from our partner warehouse, 2–4 weeks." Under-promising here prevents chargebacks.
+- [ ] **Feature the 1-week US shipping as a selling point** — homepage banner, product pages, cart: "Fast US shipping — delivered in ~1 week." This beats nearly every AliExpress-based competitor and lifts conversion.
+- [ ] **Still set a safe, honest range** (e.g. "5–9 business days") rather than promising an exact day, so a slow parcel doesn't trigger a dispute.
 - [ ] **Offer order tracking** (app like 17track/AfterShip) so customers can self-serve "where's my order?".
-- [ ] **Write a hygiene-aware returns policy** — standard practice: **intimate apparel can't be returned once opened/worn for hygiene reasons**, except faulty items. State this clearly and fairly. Offer easy resolution for wrong-size/defective.
+- [ ] **Write the no-returns policy carefully.** A blanket "no returns" is legal in the US, but two cautions:
+  - **Always make an exception for defective / wrong / damaged items** — refund or replace these. Refusing creates chargebacks and bad reviews, and may run afoul of consumer-protection expectations.
+  - **Card networks & PayPal can force a chargeback regardless of your policy.** A clearly posted hygiene policy is your defense evidence, not an absolute shield.
+  - Recommended wording: *"For hygiene reasons we cannot accept returns or exchanges on intimate apparel. If your item arrives defective or incorrect, contact us within 48 hours and we'll make it right."* Show it at checkout (a tick-to-agree helps in disputes).
+- [ ] **Because there are no size exchanges, the size chart must be airtight** (see Phase 4) — sizing mistakes become refunds you can't recover.
 - [ ] **Trust signals are critical for lingerie + dropshipping:** secure-checkout badges, payment logos, real contact info, a visible FAQ covering sizing/shipping/returns.
 - [ ] **Add reviews** — seed with your sample experience; collect customer reviews early (app like Loox/Judge.me with photos).
 - [ ] **Set up abandoned-cart emails.**
@@ -127,6 +139,6 @@ and **intimate apparel** — the two things that make or break this niche.
 2. DSers connected to the Ellolace AliExpress products
 3. 10–15 curated products with **accurate cm/inch size charts** and rewritten copy
 4. Payment gateway tested end-to-end (incl. auto-fulfillment)
-5. Clear shipping-time banner (2–4 weeks) + hygiene returns policy
+5. "Fast US shipping ~1 week" banner + hygiene no-returns policy (with defective-item exception)
 6. Meta/TikTok pixel installed
 7. One small, tasteful test ad + a launch discount, announced to your network
